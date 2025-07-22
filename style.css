@@ -1,0 +1,241 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Blurred background image setup */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+
+/* Add blur background with focus on bottom */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('image1.jpeg'); /* Use correct path */
+  background-size: cover;
+  background-position: center; /* Focus on top and middle */
+  background-repeat: no-repeat;
+  filter: blur(6px) brightness(0.6);
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(30, 42, 56, 0.9); /* Slightly transparent */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff9900;
+}
+
+/* Content Section */
+.content {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  z-index: 1;
+  position: relative;
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content p,
+.content li {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.content ul {
+  padding-left: 20px;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  background-color: #1e2a38;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #ff9900;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Hero section */
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 600px;
+}
+
+.hero button {
+  margin-top: 20px;
+}
+
+/* Intro video */
+#introVideo {
+  display: block;
+  margin: 40px auto;
+  border: 4px solid #1e2a38;
+  border-radius: 10px;
+}
+
+/* Footer (always at bottom) */
+footer {
+  background-color: #1e2a38;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  width: 100%;
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+}
+
+/* Page layout for sticky footer */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  font-size: 18px;
+  background-color: #a084dc;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#scrollBtn:hover {
+  background-color: #ff9900;
+}
+/* Lightbox (popup) gallery */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  cursor: zoom-out;
+}
+
+.popup-image {
+  max-width: 90%;
+  max-height: 90%;
+  border: 4px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
